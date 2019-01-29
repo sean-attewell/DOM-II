@@ -100,3 +100,26 @@ document.querySelector("#myText").addEventListener("copy", copyFunc);
 function copyFunc() {
   alert("You copied text!");
 }
+
+
+//
+
+const links = document.querySelectorAll('a[href="#"]');
+
+links[0].addEventListener('click', eventObject => {
+  eventObject.preventDefault();
+});
+
+links[1].addEventListener('click', eventObject => {
+    eventObject.preventDefault();
+  });
+
+links[2].addEventListener('click', eventObject => {
+  eventObject.preventDefault();
+});  
+
+links[3].addEventListener('click', eventObject => {
+    eventObject.preventDefault();
+  });
+
+  
