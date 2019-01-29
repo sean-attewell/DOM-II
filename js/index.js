@@ -102,7 +102,8 @@ function copyFunc() {
 }
 
 
-//
+// Stop the navigation from items from refreshing the page by 
+// using `preventDefault()`
 
 const links = document.querySelectorAll('a[href="#"]');
 
@@ -122,4 +123,27 @@ links[3].addEventListener('click', eventObject => {
     eventObject.preventDefault();
   });
 
-  
+// Nest two similar events somewhere in the site and prevent
+// the event propagation properly
+
+childElement = document.querySelector(".buttonClass");
+childElement.addEventListener('click', (event) => {
+    // event.stopPropagation();
+    event.stopImmediatePropagation();
+    console.log('Child clicked - event 1')
+});
+childElement.addEventListener('click', (event) => {
+    console.log('Child clicked - event 2')
+});
+
+parentElement = document.querySelector(".footer");
+parentElement.addEventListener('click', () => console.log('Parent clicked'));
+
+// with stopPropagation() on a child, both events on the child still fire,
+// but not the parent.
+
+// with stopImmediatePropagation(), only the first child event fires.
+
+// Can add third parameter to eventListner (, true) to make events fire
+// in capture phase going down the tree rather than bubbling phase coming
+// back up the tree 
