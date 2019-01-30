@@ -220,6 +220,12 @@ img {
   border-top: 2px dashed #C0C0C0;
   background: #FFEBCD;
 }
+.footer img {
+  width: 100%;
+}
+.footer .buttonClass {
+  margin-left: 44.5%;
+}
 .footer p {
   text-align: center;
   color: #212529;
@@ -349,4 +355,11 @@ img {
 .home .content-pick .destination .btn:hover {
   background: #FFFFFF;
   color: #17A2B8;
+}
+.blurred {
+  background: #ddd;
+  color: #555;
+}
+.dissapear {
+  display: none;
 }
